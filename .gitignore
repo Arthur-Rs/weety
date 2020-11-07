@@ -1,0 +1,5 @@
+node_modules
+src/**/node_modules
+src/**/.env
+.next
+REQUIRES.md

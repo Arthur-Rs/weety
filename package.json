@@ -1,0 +1,27 @@
+{
+  "useWorkspaces": true,
+  "engines": {
+    "yarn": ">=1.17.3"
+  },
+  "private": true,
+  "workspaces": [
+    "./src/web",
+    "./src/server",
+    "./src/shared/utils/*"
+  ],
+  "scripts": {
+    "adonis": "cd src/server ; adonis",
+    "server": "yarn workspace @weety/server",
+    "web": "yarn workspace @weety/web",
+    "add:server": "yarn workspace @weety/server add",
+    "add:web": "yarn workspace @weety/web add",
+    "dev:web": "cd src/web ; yarn dev",
+    "dev:server": "cd src/server ; adonis server -dev",
+    "dev:all": "npm-run-all dev:*"
+  },
+  "lerna": "latest",
+  "devDependencies": {
+    "lerna": "latest",
+    "npm-run-all": "^4.1.5"
+  }
+}
