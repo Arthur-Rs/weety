@@ -13,12 +13,13 @@ export const Container = styled.div<ContainerProps>`
   border: 2px solid ${({ theme }) => theme.colors.background.light};
   padding: 1.4rem;
   width: 100%;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.text.normal};
   display: flex;
   align-items: center;
 
-  svg {
+  > svg {
     margin-right: 1.6rem;
+    stroke: ${({ theme }) => theme.colors.text.normal};
   }
 
   & + & {
@@ -28,7 +29,7 @@ export const Container = styled.div<ContainerProps>`
   ${props =>
     props.isErrored &&
     css`
-      border: 2px solid #ac3030;
+      border: 2px solid ${({ theme }) => theme.colors.red};
     `}
 
   ${props =>
@@ -36,23 +37,29 @@ export const Container = styled.div<ContainerProps>`
     css`
       border: 2px solid ${({ theme }) => theme.colors.primary};
       color: ${({ theme }) => theme.colors.primary};
+      > svg {
+        stroke: ${({ theme }) => theme.colors.primary};
+      }
     `}
 
   ${props =>
     props.isFilled &&
     css`
       color: ${({ theme }) => theme.colors.primary};
+      > svg {
+        stroke: ${({ theme }) => theme.colors.primary};
+      }
     `}
 
   input {
     flex: 1;
     background: transparent;
-    color: #f4ede8;
-   font-size: 1.8rem;
-
+    color: ${({ theme }) => theme.colors.text.normal};
+    font-size: 1.8rem;
+    width: 100%;
 
     &::placeholder {
-      color: ${({ theme }) => theme.colors.text.light};
+      color: ${({ theme }) => theme.colors.text.dark};
     }
   }
 `
@@ -62,15 +69,16 @@ export const Error = styled(Tooltip)`
   margin-left: 1.6rem;
 
   span {
-    background: #c53030;
+    background:${({ theme }) => theme.colors.red};
     color: #f4ede8;
 
     &::before {
-      border-color: #c53030 transparent;
+      border-color: ${({ theme }) => theme.colors.red} transparent;
     }
   }
 
   svg {
     margin: 0;
+    stroke: ${({ theme }) => theme.colors.red};
   }
 `

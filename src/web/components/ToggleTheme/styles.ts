@@ -22,7 +22,6 @@ export const Container = styled.button<ContainerProps>`
   justify-content: center;
 
   background: ${({ theme }) => theme.colors.background.normal};
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
   border: 2px solid ${({ theme }) => theme.colors.primary};
   border-radius: 50%;
 
@@ -34,6 +33,11 @@ export const Container = styled.button<ContainerProps>`
   @media(max-width: 720px){
     width: 6rem;
     height: 6rem;
+    left: auto;
+    bottom: auto;
+    top: 3.2rem;
+    right: 3.2rem;
+    opacity: 0.7;
 
     svg {
       width: 2.5rem;

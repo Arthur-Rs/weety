@@ -16,7 +16,7 @@
     "add:server": "yarn workspace @weety/server add",
     "add:web": "yarn workspace @weety/web add",
     "dev:web": "cd src/web ; yarn dev",
-    "dev:server": "cd src/server ; adonis server -dev",
+    "dev:server": "cd src/server ; adonis serve --dev",
     "dev:all": "npm-run-all dev:*"
   },
   "lerna": "latest",

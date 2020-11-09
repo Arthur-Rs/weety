@@ -1,19 +1,16 @@
 'use strict'
 
-/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const Model = use('Model')
 
-/** @type {import('@adonisjs/framework/src/Hash')} */
 const Hash = use('Hash')
 
+const differenceInYears = require('date-fns/differenceInYears')
+const parseISO = require('date-fns/parseISO')
+
 class User extends Model {
-  static boot () {
+  static boot() {
     super.boot()
 
-    /**
-     * A hook to hash the user password before saving
-     * it to the database.
-     */
     this.addHook('beforeSave', async (userInstance) => {
       if (userInstance.dirty.password) {
         userInstance.password = await Hash.make(userInstance.password)
@@ -21,17 +18,24 @@ class User extends Model {
     })
   }
 
-  /**
-   * A relationship on tokens is required for auth to
-   * work. Since features like `refreshTokens` or
-   * `rememberToken` will be saved inside the
-   * tokens table.
-   *
-   * @method tokens
-   *
-   * @return {Object}
-   */
-  tokens () {
+  static get hidden() {
+    return ['password']
+  }
+
+  static get computed() {
+    return ['full_name', 'age']
+  }
+
+  getFullName({ first_name, last_name }) {
+    return `${first_name} ${last_name}`
+  }
+
+  getAge({ birth_date }) {
+    const parsedDate = parseISO(birth_date)
+    return differenceInYears(new Date(), parsedDate)
+  }
+
+  tokens() {
     return this.hasMany('App/Models/Token')
   }
 }

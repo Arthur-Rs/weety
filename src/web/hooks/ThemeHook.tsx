@@ -3,7 +3,6 @@ import { DefaultTheme, ThemeProvider as StyledThemeProvider } from 'styled-compo
 import { DarkTheme } from "../styles/themes/dark";
 import { LightTheme } from "../styles/themes/light";
 
-
 type theme = 'light' | 'dark'
 
 interface IContext{
@@ -30,7 +29,7 @@ export const ThemeProvider = ({children}) => {
     light: LightTheme
   }), [])
 
-  const [themeSelected, setThemeSelected] = useState<DefaultTheme>(themes.dark)
+  const [themeSelected, setThemeSelected] = useState<DefaultTheme>()
 
   useEffect(()=>{
     const themeName = localStorage.getItem('@weety:theme')

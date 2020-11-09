@@ -1,12 +1,11 @@
-import {createGlobalStyle} from 'styled-components'
-
+import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   :root{
     font-size: 62.5%;
 
     @media(max-width: 1024px){
-      font-size: 62.5%;
+      font-size: 61%;
     }
 
     @media(max-width: 920px){
@@ -42,10 +41,16 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${({theme})=> theme.colors.background.dark};
+    background: ${({ theme }) => theme.colors.background.dark};
   }
 
   button, a{
     cursor: pointer;
+  }
+
+  svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    stroke-width: 2px;
   }
 `

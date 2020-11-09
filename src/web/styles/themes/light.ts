@@ -1,18 +1,18 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme } from 'styled-components'
 
-export const LightTheme:DefaultTheme = {
+export const LightTheme: DefaultTheme = {
   name: 'light',
   colors: {
     text: {
-      dark: '#0A0B0D',
+      light: '#0A0B0D',
       normal: '#262622',
-      light: '#403F3E',
-      link: '#039675',
+      dark: '#403F3E',
+      link: '#0E515A'
     },
     background: {
       light: '#F1F1F1',
       normal: '#D9D9D9',
-      dark: '#B3B3B3',
+      dark: '#B3B3B3'
     },
     primary: '#0896A6',
     secondary: '#039675',
@@ -23,4 +23,3 @@ export const LightTheme:DefaultTheme = {
     red: '#D91E41'
   }
 }
-

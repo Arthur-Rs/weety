@@ -18,7 +18,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null)
-  const { fieldName, defaultValue, error, registerField } = useField(name)
+  const { fieldName, defaultValue, error, registerField, clearError } = useField(name)
   const [isFocused, setIsFocused] = useState(false)
   const [isFilled, setIsFilled] = useState(false)
 
@@ -41,6 +41,7 @@ export const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
       <input
         onFocus={() => {
           setIsFocused(true)
+          clearError()
         }}
         onBlur={handleInputBlur}
         defaultValue={defaultValue}
@@ -49,7 +50,7 @@ export const Input = ({ name, icon: Icon, ...rest }: InputProps) => {
       />
       {error && (
         <Error title={error}>
-          <FiAlertCircle color="#ac3030" size={20} />
+          <FiAlertCircle />
         </Error>
       )}
     </Container>

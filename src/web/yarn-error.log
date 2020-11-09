@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /usr/bin/yarn
+  /usr/bin/node /usr/lib/node_modules/yarn/lib/cli.js add date-fns
 
 PATH: 
-  /home/arthur/.zinit/polaris/sbin:/home/arthur/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/arthur/android/SDK/emulator:/home/arthur/android/SDK/tools:/home/arthur/android/SDK/tools/bin:/home/arthur/android/SDK/platform-tools:/home/arthur/android/android-studio/bin:/home/arthur/.deno/bin:/home/arthur/android/SDK/emulator:/home/arthur/android/SDK/tools:/home/arthur/android/SDK/tools/bin:/home/arthur/android/SDK/platform-tools:/home/arthur/android/android-studio/bin:/home/arthur/.deno/bin
+  /tmp/yarn--1604890454346-0.2672885954421844:/home/arthur/Applications/Weety/node_modules/.bin:/home/arthur/.config/yarn/link/node_modules/.bin:/home/arthur/Applications/Weety/node_modules/.bin:/home/arthur/.yarn/bin:/usr/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/lib/node_modules/npm/bin/node-gyp-bin:/usr/bin/node_modules/npm/bin/node-gyp-bin:/home/arthur/.zinit/polaris/sbin:/home/arthur/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/arthur/android/SDK/emulator:/home/arthur/android/SDK/tools:/home/arthur/android/SDK/tools/bin:/home/arthur/android/SDK/platform-tools:/home/arthur/android/android-studio/bin:/home/arthur/.deno/bin:/home/arthur/android/SDK/emulator:/home/arthur/android/SDK/tools:/home/arthur/android/SDK/tools/bin:/home/arthur/android/SDK/platform-tools:/home/arthur/android/android-studio/bin:/home/arthur/.deno/bin
 
 Yarn version: 
   1.22.4
