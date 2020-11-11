@@ -1,11 +1,15 @@
-import { AppProvider } from "../hooks"
-import { GlobalStyle } from "../styles/pages/GlobalStyles"
+/* eslint-disable react/prop-types */
+import { AppProvider } from '../hooks'
+import { GlobalStyle } from '../styles/GlobalStyles'
 
-const MyApp = ({ Component, pageProps }) => (
-  <AppProvider>
-    <Component {...pageProps} />
-    <GlobalStyle/>
-  </AppProvider>
-)
+const MyApp = ({ Component, pageProps }) => {
+  console.log(pageProps)
+  return (
+    <AppProvider>
+      <Component {...pageProps} />
+      <GlobalStyle />
+    </AppProvider>
+  )
+}
 
 export default MyApp

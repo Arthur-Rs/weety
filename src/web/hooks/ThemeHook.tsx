@@ -1,11 +1,20 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { DefaultTheme, ThemeProvider as StyledThemeProvider } from 'styled-components'
-import { DarkTheme } from "../styles/themes/dark";
-import { LightTheme } from "../styles/themes/light";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useState
+} from 'react'
+import {
+  DefaultTheme,
+  ThemeProvider as StyledThemeProvider
+} from 'styled-components'
+import { DarkTheme } from '../styles/themes/dark'
+import { LightTheme } from '../styles/themes/light'
 
 type theme = 'light' | 'dark'
 
-interface IContext{
+interface IContext {
   theme: DefaultTheme
   setTheme(theme: theme): void
   toggleTheme(): void
@@ -13,54 +22,59 @@ interface IContext{
 
 const ThemeContext = createContext<IContext>({} as IContext)
 
-export const useTheme = ():IContext => {
+export const useTheme = (): IContext => {
   const context = useContext(ThemeContext)
 
-  if(!context){
+  if (!context) {
     throw new Error('ThemeContext não foi encontrado!')
   }
 
   return context
 }
 
-export const ThemeProvider = ({children}) => {
-  const themes = useMemo(() => ({
-    dark: DarkTheme,
-    light: LightTheme
-  }), [])
+const themes = {
+  dark: DarkTheme,
+  light: LightTheme
+}
 
-  const [themeSelected, setThemeSelected] = useState<DefaultTheme>()
+export const ThemeProvider = ({ children }) => {
+  const [themeSelected, setThemeSelected] = useState<DefaultTheme>(themes.dark)
 
-  useEffect(()=>{
+  useEffect(() => {
     const themeName = localStorage.getItem('@weety:theme')
-    
 
-    if(themeName){
+    if (themeName) {
       setThemeSelected(themes[themeName])
+      return
     }
 
-    setThemeSelected(themes.dark)    
-  },[themes])
+    setThemeSelected(themes.dark)
+  }, [])
 
-  const setTheme = useCallback((theme: theme)=>{
-    setThemeSelected(themes[theme])
-    localStorage.setItem('@weety:theme', theme)
-  },[themes])
+  const setTheme = useCallback(
+    (theme: theme) => {
+      setThemeSelected(themes[theme])
+      localStorage.setItem('@weety:theme', theme)
+    },
+    [themes]
+  )
 
-  const toggleTheme = useCallback(()=>{
-    setThemeSelected(({name}) => {
-      if(name === 'dark'){
+  const toggleTheme = useCallback(() => {
+    setThemeSelected(({ name }) => {
+      if (name === 'dark') {
         localStorage.setItem('@weety:theme', 'light')
         return themes.light
-      } 
-      
+      }
+
       localStorage.setItem('@weety:theme', 'dark')
-      return themes.dark 
+      return themes.dark
     })
-  },[])
+  }, [])
 
   return (
-    <ThemeContext.Provider value={{setTheme, toggleTheme, theme: themeSelected}}>
+    <ThemeContext.Provider
+      value={{ setTheme, toggleTheme, theme: themeSelected }}
+    >
       <StyledThemeProvider theme={themeSelected}>
         {children}
       </StyledThemeProvider>

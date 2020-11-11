@@ -1,6 +1,6 @@
 import 'styled-components'
 
-declare module 'styled-components'{
+declare module 'styled-components' {
   export interface DefaultTheme {
     name: 'dark' | 'light'
     colors: {
@@ -8,7 +8,7 @@ declare module 'styled-components'{
         dark: string
         normal: string
         light: string
-      },
+      }
       text: {
         dark: string
         normal: string

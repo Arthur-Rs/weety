@@ -1,7 +1,8 @@
-import { ThemeProvider } from "./ThemeHook";
+import { AuthProvider } from './AuthHook'
+import { ThemeProvider } from './ThemeHook'
 
-export const AppProvider = ({children}) => (
+export const AppProvider = ({ children }) => (
   <ThemeProvider>
-    {children}
+    <AuthProvider>{children}</AuthProvider>
   </ThemeProvider>
 )

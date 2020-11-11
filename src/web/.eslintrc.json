@@ -3,7 +3,10 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard"],
+  "extends": [
+    "plugin:react/recommended",
+    "standard"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -12,10 +15,19 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "prettier",
+    "better-styled-components",
+    "filenames"
+  ],
   "rules": {
     "prettier/prettier": "error",
     "react/react-in-jsx-scope": "off",
-    "camelcase": "off"
+    "camelcase": "off",
+    "space-before-function-paren": "off",
+    "better-styled-components/sort-declarations-alphabetically": 2,
+    "react/prop-types": "off"
   }
 }

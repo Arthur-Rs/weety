@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import {Tooltip} from '../Tooltip'
+import { Tooltip } from '../Tooltip'
 
 interface ContainerProps {
   isFocused: boolean
@@ -8,14 +8,14 @@ interface ContainerProps {
 }
 
 export const Container = styled.div<ContainerProps>`
+  align-items: center;
   background: ${({ theme }) => theme.colors.background.light};
-  border-radius: 0.5rem;
   border: 2px solid ${({ theme }) => theme.colors.background.light};
-  padding: 1.4rem;
-  width: 100%;
+  border-radius: 0.5rem;
   color: ${({ theme }) => theme.colors.text.normal};
   display: flex;
-  align-items: center;
+  padding: 1.4rem;
+  width: 100%;
 
   > svg {
     margin-right: 1.6rem;
@@ -26,13 +26,13 @@ export const Container = styled.div<ContainerProps>`
     margin-top: 0.8rem;
   }
 
-  ${props =>
+  ${(props) =>
     props.isErrored &&
     css`
       border: 2px solid ${({ theme }) => theme.colors.red};
     `}
 
-  ${props =>
+  ${(props) =>
     props.isFocused &&
     css`
       border: 2px solid ${({ theme }) => theme.colors.primary};
@@ -42,7 +42,7 @@ export const Container = styled.div<ContainerProps>`
       }
     `}
 
-  ${props =>
+  ${(props) =>
     props.isFilled &&
     css`
       color: ${({ theme }) => theme.colors.primary};
@@ -52,9 +52,9 @@ export const Container = styled.div<ContainerProps>`
     `}
 
   input {
-    flex: 1;
     background: transparent;
     color: ${({ theme }) => theme.colors.text.normal};
+    flex: 1;
     font-size: 1.8rem;
     width: 100%;
 
@@ -69,7 +69,7 @@ export const Error = styled(Tooltip)`
   margin-left: 1.6rem;
 
   span {
-    background:${({ theme }) => theme.colors.red};
+    background: ${({ theme }) => theme.colors.red};
     color: #f4ede8;
 
     &::before {

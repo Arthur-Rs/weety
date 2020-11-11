@@ -3,19 +3,19 @@ import { Form as UnformForm } from '@unform/web'
 
 export const Container = styled.div`
   display: flex;
-  justify-content: flex-start;
   height: 100vh;
+  justify-content: flex-start;
 `
 
 export const Content = styled.div`
+  align-items: center;
+  background: ${({ theme }) => theme.colors.background.normal};
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50rem;
   height: 100%;
+  justify-content: center;
 
-  background: ${({ theme }) => theme.colors.background.normal};
+  width: 50rem;
 
   > span {
     font-size: 2.4rem;
@@ -30,13 +30,13 @@ export const Title = styled.h1`
   font-size: 4.8rem;
 `
 export const Register = styled.a`
-  display: flex;
   align-items: center;
-
-  font-size: 1.8rem;
-  margin-bottom: 2.4rem;
-
   color: ${({ theme }) => theme.colors.text.link};
+
+  display: flex;
+  font-size: 1.8rem;
+
+  margin-bottom: 2.4rem;
 
   svg {
     margin-left: 0.8rem;
@@ -44,10 +44,10 @@ export const Register = styled.a`
   }
 `
 export const Forgot = styled.a`
+  align-self: flex-end;
   color: ${({ theme }) => theme.colors.text.dark};
   font-size: 1.4rem;
   margin-top: 0.8rem;
-  align-self: flex-end;
 
   @media (max-width: 720px) {
     font-size: 1.8rem;
@@ -58,11 +58,11 @@ export const Forgot = styled.a`
   }
 `
 export const Form = styled(UnformForm)`
-  width: 100%;
-  padding: 0 6.4rem;
-  margin: 6.4rem 0;
   display: flex;
   flex-direction: column;
+  margin: 6.4rem 0;
+  padding: 0 6.4rem;
+  width: 100%;
 
   @media (max-width: 720px) {
     padding: 0 4rem;
