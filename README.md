@@ -1,0 +1,1 @@
+Eu Alice Reis Lima, declaro por meio desse documento que todos os meus pertences irão  a partir de agora pertencer de Arthur Reis Lima.
